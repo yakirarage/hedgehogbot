@@ -32,17 +32,16 @@ class Events(commands.Cog):
 		print(f"id: {self.bot.user.id}")
 		print(f"guilds: {len(self.bot.guilds)}")
     
-	# @commands.Cog.listener()
-	# async def on_member_join(self, member):
-	# 	embed = disnake.Embed(color=0xF99244)
-	# 	embed.set_thumbnail(member.guild.icon.url)
-	# 	embed.title=f"Welcome to {member.guild.name}"
-	# 	embed.set_author(name=str(member), icon_url=member.display_avatar)
-	# 	embed.set_footer(text=f"Thanks for joining, your the {member.guild.member_count}th member!", icon_url=self.bot.user.avatar.url)
-	# 	embed.description="• Be sure to read the <#827771691727716353>\n• You can chat with other people at <#827651362099036180>\n • Ask for support and help at <#1047304462710079549> or <#1047304535074422864>!"
-	# 	embed.set_image("https://cdn.discordapp.com/attachments/899309915020095488/900106251256623154/You_Doodle_2021-10-19T19_40_42Z.jpg")
-	# 	cha = self.bot.get_channel(850282417017454602)
-	# 	await cha.send(content=f"* Welcome {member.mention}", embed=embed)
+	@commands.Cog.listener()
+	async def on_member_join(self, member):
+		embed = disnake.Embed(color=0xe6b3ff)
+		embed.set_thumbnail(member.guild.icon.url)
+		embed.title=f"Welcome to {member.guild.name}"
+		embed.set_author(name=str(member), icon_url=member.display_avatar)
+		embed.set_footer(text=f"Thanks for joining, your the {member.guild.member_count}th member!", icon_url=self.bot.user.avatar.url)
+		embed.description="We are a chill guild all about hedgehogs!\n• Be sure to read the <#813580269998047282>\n• You can chat with other people at <#813110873840549912>\n • share all your hedgehog pictures at <#813111777234518036>"
+		cha = self.bot.get_channel(816878772816838666)
+		await cha.send(content=f"* Welcome {member.mention}", embed=embed)
     
 
 def setup(bot):
