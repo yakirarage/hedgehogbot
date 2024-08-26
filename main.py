@@ -3,7 +3,6 @@ import disnake
 from dotenv import load_dotenv
 from disnake.ext import commands
 from disnake import AllowedMentions
-from motor.motor_asyncio import AsyncIOMotorClient
 
 load_dotenv()
 
