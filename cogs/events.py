@@ -36,13 +36,16 @@ class Events(commands.Cog):
 	async def on_member_join(self, member):
 		embed = disnake.Embed(color=0xe6b3ff)
 		embed.set_thumbnail(member.guild.icon.url)
-		embed.title=f"Welcome to {member.guild.name}"
-		embed.set_author(name=str(member), icon_url=member.display_avatar)
+		embed.set_author(name=F"Welcome {member.name} to {member.guild.name}!", icon_url=member.display_avatar)
 		embed.set_footer(text=f"Thanks for joining, your the {member.guild.member_count}th member!", icon_url=self.bot.user.avatar.url)
-		embed.description="We are a chill guild all about hedgehogs!\n• Be sure to read the <#813580269998047282>\n• You can chat with other people at <#813110873840549912>\n • share all your hedgehog pictures at <#813111777234518036>"
+		embed.description="We are the best guild to hedgehog lovers! do introduce yourself in <#814598536368226315>"
 		cha = self.bot.get_channel(816878772816838666)
 		await cha.send(content=f"* Welcome {member.mention}", embed=embed)
-    
+
+	@commands.Cog.listener()
+	async def on_member_remove(self, member):
+		cha = self.bot.get_channel(813264746815684649)
+		await cha.send(content=f"**{member.name}**`{member.id}` left :(")
 
 def setup(bot):
 	bot.add_cog(Events(bot))

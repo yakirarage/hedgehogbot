@@ -6,7 +6,7 @@ from disnake import AllowedMentions
 
 load_dotenv()
 
-description = """The more awesome hedgehog bot!!!"""
+description = """The most awesome hedgehog bot!!!"""
 
 intents = disnake.Intents.all()
 
