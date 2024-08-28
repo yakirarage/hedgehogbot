@@ -33,8 +33,7 @@ bot = HedgehogBot(
         everyone=True,
         roles=True,
         replied_user=True,
-    ),
-    test_guilds=[992432202002468895, 813110873840549908]
+    )
 )
 
 
