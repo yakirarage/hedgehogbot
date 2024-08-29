@@ -15,8 +15,8 @@ def get_random_image_path(folder_path, inter):
         
         random_image = random.choice(images)
         random_image_path = os.path.join(folder_path, random_image)
-        print(f"Here the random image path from the folder:")
-        print(random_image_path)
+        # print(f"Here the random image path from the folder:")
+        # print(random_image_path)
         return random_image_path, random_image
     
     except Exception as e:
@@ -37,11 +37,11 @@ class Fun(commands.Cog):
             print(f" The specified folder does not exist: {folder_path}")
 
         file = disnake.File(random_IP, filename=random_I)
-        em = disnake.Embed(
-            color=0xe6b3ff,
-        )
-        em.set_thumbnail(url=f"attachment://{random_I}")
-        await inter.send(file=file, embed=em)
+        # em = disnake.Embed(
+        #     color=0xe6b3ff,
+        # )
+        # em.set_thumbnail(url=f"attachment://{random_I}")
+        await inter.send(content="```Here is a random but super adorable hedgehog picture!!```",file=file)
 
 
 def setup(bot):
