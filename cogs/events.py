@@ -20,8 +20,8 @@ class Events(commands.Cog):
 		embed = disnake.Embed(color=0xe6b3ff)
 		embed.set_thumbnail(member.guild.icon.url)
 		embed.set_author(name=F"Welcome {member.name} to {member.guild.name}!", icon_url=member.display_avatar)
-		embed.set_footer(text=f"Thanks for joining, your the {member.guild.member_count}th member!", icon_url=self.bot.user.avatar.url)
-		embed.description="We are the best guild to hedgehog lovers! do introduce yourself in <#814598536368226315>"
+		embed.set_footer(text=f"Thanks for joining, you’re the {member.guild.member_count}th member!", icon_url=self.bot.user.avatar.url)
+		embed.description="Welcome to the guild! Check out our emojis and feel free to introduce yourself <#814598536368226315>"
 		cha = self.bot.get_channel(816878772816838666)
 		await cha.send(content=f"* Welcome {member.mention}", embed=embed)
 
