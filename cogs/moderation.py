@@ -10,11 +10,12 @@ class Moderation(commands.Cog):
         self.bot = bot
 
     @commands.slash_command(description="purge set amount of messages")
+    @commands.default_member_permissions(administrator=True)
     async def purge(self, inter, amount: int):
         if amount > 100:
             await inter.send("You can purge up to max `100` message at a time.")
             return
-            
+
         await inter.channel.purge(limit=amount + 1)
 
         await inter.response.defer()
